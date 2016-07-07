@@ -1,0 +1,9 @@
+{
+	"name": "madwell/madwell-menu",
+	"desciption": "WordPress plugin that allows for easy editing of restaurant menus (ACF) and shortcode integration with the frontend.",
+	"type": "wordpress-plugin",
+	"require": {
+		"php": ">=5.4",
+		"johnpbloch/wordpress": "4.*"
+	}
+}
