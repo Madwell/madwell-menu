@@ -84,31 +84,47 @@ function the_madwell_menu( $post_ID = '' ) {
 
 						if ( have_rows('subsections', $post_ID) ) :
 
-							while ( have_rows('subsections', $post_ID) ) : the_row();
+							echo '<div class="menu-subsections">';
 
-								// Create subsection element, use subsection name
-								echo '<div class="menu-subsection" id="menu-subsection--' . esc_url(slugify( get_sub_field('subsection_name', $post_ID) )) . '">';
+								echo '<ul class="menu-subsections__nav">';
 
-									// Subsection header
-									echo '<h4 class="menu-subsection__title">' . esc_html(get_sub_field('subsection_name', $post_ID)) . '</h3>';
-									if ( get_sub_field('subsection_description', $post_ID) ) echo esc_html(get_field('subsection_description', $post_ID));
+									while ( have_rows('subsections', $post_ID) ) : the_row();
 
-									// Print out menu items for subsection
-									if ( get_sub_field('subsection_menu_items', $post_ID) ) {
+										// List all subsections (nav)
+										echo '<li class="menu-subsections__nav-item" data-target="' . esc_attr(slugify( get_sub_field('subsection_name', $post_ID) )) . '">' . esc_html(get_sub_field('subsection_name', $post_ID)) . '</li>';
 
-										echo '<ul class="menu-subsection__items">';
-											while ( has_sub_field('subsection_menu_items') ) {
+									endwhile;
 
-												// Call helper function to print standard menu item list item
-												madwell_menu_item( $post_ID );
+								echo '</ul>';
 
-											}
-										echo '</ul>';
-									}
+								while ( have_rows('subsections', $post_ID) ) : the_row();
 
-								echo '</div>';
+									// Create subsection element, use subsection name
+									echo '<div class="menu-subsection" data-name="' . esc_attr(slugify( get_sub_field('subsection_name', $post_ID) )) . '" id="menu-subsection--' . esc_url(slugify( get_sub_field('subsection_name', $post_ID) )) . '">';
 
-							endwhile; // while subsections
+										// Subsection header
+										echo '<h4 class="menu-subsection__title">' . esc_html(get_sub_field('subsection_name', $post_ID)) . '</h3>';
+										if ( get_sub_field('subsection_description', $post_ID) ) echo esc_html(get_field('subsection_description', $post_ID));
+
+										// Print out menu items for subsection
+										if ( get_sub_field('subsection_menu_items', $post_ID) ) {
+
+											echo '<ul class="menu-subsection__items">';
+												while ( has_sub_field('subsection_menu_items') ) {
+
+													// Call helper function to print standard menu item list item
+													madwell_menu_item( $post_ID );
+
+												}
+											echo '</ul>';
+										}
+
+									echo '</div>';
+
+								endwhile; // while subsections
+
+							echo '</div>';
+
 						endif; // if subsections
 
 						break;
