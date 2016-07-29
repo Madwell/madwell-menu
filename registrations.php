@@ -53,7 +53,7 @@ function madwell_menu_post_type() {
 		'rewrite'               => $rewrite,
 		'capability_type'       => 'page',
 	);
-	register_post_type( 'madwell_menu', $args );
+	register_post_type( 'madwell-menu', $args );
 
 }
 add_action( 'init', 'madwell_menu_post_type', 0 );
@@ -93,7 +93,7 @@ function madwell_menu_group() {
 		'show_in_nav_menus'          => true,
 		'show_tagcloud'              => true,
 	);
-	register_taxonomy( 'madwell_menu_group', array( 'madwell_menu' ), $args );
+	register_taxonomy( 'madwell_menu_group', array( 'madwell-menu' ), $args );
 
 }
 add_action( 'init', 'madwell_menu_group', 0 );
