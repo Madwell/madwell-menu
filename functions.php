@@ -6,9 +6,9 @@ function madwell_menu_item($post_ID) {
 	$item_string = '';
 
 	$item_string .= '<li class="menu-item">';
-		$item_string .= '<h5 class="menu-item__name">' . get_sub_field('name', $post_ID) . '</h5>';
-		if ( get_sub_field('name', $post_ID) ) $item_string .= '<p class="menu-item__description">' . get_sub_field('name', $post_ID) . '</p>';
-		if ( get_sub_field('price', $post_ID) ) $item_string .= '<p class="menu-item__price">' . get_sub_field('price', $post_ID) . '</p>';
+		$item_string .= '<h5 class="menu-item__name">' . esc_html(get_sub_field('name', $post_ID)) . '</h5>';
+		if ( get_sub_field('name', $post_ID) ) $item_string .= '<p class="menu-item__description">' . esc_html(get_sub_field('name', $post_ID)) . '</p>';
+		if ( get_sub_field('price', $post_ID) ) $item_string .= '<p class="menu-item__price">' . esc_html(get_sub_field('price', $post_ID)) . '</p>';
 	$item_string .= '</li>';
 
 	echo $item_string;
@@ -61,8 +61,8 @@ function the_madwell_menu( $post_ID = '' ) {
 			echo '<section class="menu-section" id="menu-section--' . slugify( get_sub_field('section_name', $post_ID) ) . '">';
 
 				// Section header
-				echo '<h3 class="menu-section__title">' . get_sub_field('section_name', $post_ID) . '</h3>';
-				if ( get_field('section_description', $post_ID) ) the_field('section_description', $post_ID);
+				echo '<h3 class="menu-section__title">' . esc_html(get_sub_field('section_name', $post_ID)) . '</h3>';
+				if ( get_field('section_description', $post_ID) ) echo esc_html(get_field('section_description', $post_ID));
 
 				// Print out top-level menu items that do not belong in any subsection (applicable to all layouts)
 				if ( get_field('menu_items', $post_ID) ) {
@@ -90,8 +90,8 @@ function the_madwell_menu( $post_ID = '' ) {
 								echo '<div class="menu-subsection" id="menu-subsection--' . slugify( get_sub_field('subsection_name', $post_ID) ) . '">';
 
 									// Subsection header
-									echo '<h4 class="menu-subsection__title">' . get_sub_field('subsection_name', $post_ID) . '</h3>';
-									if ( get_sub_field('subsection_description', $post_ID) ) the_field('subsection_description', $post_ID);
+									echo '<h4 class="menu-subsection__title">' . esc_html(get_sub_field('subsection_name', $post_ID)) . '</h3>';
+									if ( get_sub_field('subsection_description', $post_ID) ) echo esc_html(get_field('subsection_description', $post_ID));
 
 									// Print out menu items for subsection
 									if ( get_sub_field('subsection_menu_items', $post_ID) ) {
