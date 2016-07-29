@@ -13,3 +13,6 @@
 
 // Add custom fields
 @include 'fields.php';
+
+// Plugin functions
+@include 'functions.php';
