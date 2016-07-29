@@ -53,9 +53,9 @@ function the_madwell_menu( $post_ID = '' ) {
 	$the_menu = get_field('menu_sections', $post_ID);
 
 	// Start flexible content
-	if ( have_rows('menu_sections') ) :
+	if ( have_rows('menu_sections', $post_ID) ) :
 
-		while ( have_rows('menu_sections') ) : the_row();
+		while ( have_rows('menu_sections', $post_ID) ) : the_row();
 
 			// Create section element, use section name (apllicable to all layouts)
 			echo '<section class="menu-section" id="menu-section--' . slugify( get_sub_field('section_name', $post_ID) ) . '">';
@@ -82,9 +82,9 @@ function the_madwell_menu( $post_ID = '' ) {
 					// This layout has subsections, each with their own menu items
 					case 'standard_subsections':
 
-						if ( have_rows('subsections') ) :
+						if ( have_rows('subsections', $post_ID) ) :
 
-							while ( have_rows('subsections') ) : the_row();
+							while ( have_rows('subsections', $post_ID) ) : the_row();
 
 								// Create subsection element, use subsection name
 								echo '<div class="menu-subsection" id="menu-subsection--' . slugify( get_sub_field('subsection_name', $post_ID) ) . '">';
