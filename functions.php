@@ -58,7 +58,7 @@ function the_madwell_menu( $post_ID = '' ) {
 		while ( have_rows('menu_sections', $post_ID) ) : the_row();
 
 			// Create section element, use section name (apllicable to all layouts)
-			echo '<section class="menu-section" id="menu-section--' . slugify( get_sub_field('section_name', $post_ID) ) . '">';
+			echo '<section class="menu-section" id="menu-section--' . esc_url(slugify( get_sub_field('section_name', $post_ID) )) . '">';
 
 				// Section header
 				echo '<h3 class="menu-section__title">' . esc_html(get_sub_field('section_name', $post_ID)) . '</h3>';
@@ -87,7 +87,7 @@ function the_madwell_menu( $post_ID = '' ) {
 							while ( have_rows('subsections', $post_ID) ) : the_row();
 
 								// Create subsection element, use subsection name
-								echo '<div class="menu-subsection" id="menu-subsection--' . slugify( get_sub_field('subsection_name', $post_ID) ) . '">';
+								echo '<div class="menu-subsection" id="menu-subsection--' . esc_url(slugify( get_sub_field('subsection_name', $post_ID) )) . '">';
 
 									// Subsection header
 									echo '<h4 class="menu-subsection__title">' . esc_html(get_sub_field('subsection_name', $post_ID)) . '</h3>';
