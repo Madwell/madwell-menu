@@ -104,7 +104,7 @@ function the_madwell_menu( $post_ID = '' ) {
 
 										// Subsection header
 										echo '<h4 class="menu-subsection__title">' . esc_html(get_sub_field('subsection_name', $post_ID)) . '</h3>';
-										if ( get_sub_field('subsection_description', $post_ID) ) echo esc_html(get_field('subsection_description', $post_ID));
+										if ( get_sub_field('subsection_description', $post_ID) ) echo '<p class="menu-subsection__description">' . esc_html(get_sub_field('subsection_description', $post_ID)) . '</p>';
 
 										// Print out menu items for subsection
 										if ( get_sub_field('subsection_menu_items', $post_ID) ) {
