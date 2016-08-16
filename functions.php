@@ -7,7 +7,7 @@ function madwell_menu_item($post_ID) {
 
 	$item_string .= '<li class="menu-item">';
 		$item_string .= '<h5 class="menu-item__name">' . esc_html(get_sub_field('name', $post_ID)) . '</h5>';
-		if ( get_sub_field('name', $post_ID) ) $item_string .= '<p class="menu-item__description">' . esc_html(get_sub_field('name', $post_ID)) . '</p>';
+		if ( get_sub_field('description', $post_ID) ) $item_string .= '<p class="menu-item__description">' . esc_html(get_sub_field('description', $post_ID)) . '</p>';
 		if ( get_sub_field('price', $post_ID) ) $item_string .= '<p class="menu-item__price">' . esc_html(get_sub_field('price', $post_ID)) . '</p>';
 	$item_string .= '</li>';
 
