@@ -7,7 +7,7 @@ function madwell_menu_item($post_ID) {
 
 	$item_string .= '<li class="menu-item">';
 		$item_string .= '<h5 class="menu-item__name">' . esc_html(get_sub_field('name', $post_ID)) . '</h5>';
-		if ( get_sub_field('description', $post_ID) ) $item_string .= '<p class="menu-item__description">' . esc_html(get_sub_field('description', $post_ID)) . '</p>';
+		if ( get_sub_field('description', $post_ID) ) $item_string .= '<div class="menu-item__description">' . wpautop(esc_html(get_sub_field('description', $post_ID))) . '</div>';
 		if ( get_sub_field('price', $post_ID) ) $item_string .= '<p class="menu-item__price">' . esc_html(get_sub_field('price', $post_ID)) . '</p>';
 	$item_string .= '</li>';
 
@@ -104,7 +104,7 @@ function the_madwell_menu( $post_ID = '' ) {
 
 										// Subsection header
 										echo '<h4 class="menu-subsection__title">' . esc_html(get_sub_field('subsection_name', $post_ID)) . '</h3>';
-										if ( get_sub_field('subsection_description', $post_ID) ) echo '<p class="menu-subsection__description">' . esc_html(get_sub_field('subsection_description', $post_ID)) . '</p>';
+										if ( get_sub_field('subsection_description', $post_ID) ) echo '<div class="menu-subsection__description">' . wpautop(esc_html(get_sub_field('subsection_description', $post_ID))) . '</div>';
 
 										// Print out menu items for subsection
 										if ( get_sub_field('subsection_menu_items', $post_ID) ) {
