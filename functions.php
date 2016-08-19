@@ -102,6 +102,9 @@ function the_madwell_menu( $post_ID = '' ) {
 									// Create subsection element, use subsection name
 									echo '<div class="menu-subsection" data-name="' . esc_attr(slugify( get_sub_field('subsection_name', $post_ID) )) . '" id="menu-subsection--' . esc_url(slugify( get_sub_field('subsection_name', $post_ID) )) . '">';
 
+										// Back button for mobile
+										echo '<a class="menu-subsection__toggle">Back to List</a>';
+
 										// Subsection header
 										echo '<h4 class="menu-subsection__title">' . esc_html(get_sub_field('subsection_name', $post_ID)) . '</h3>';
 										if ( get_sub_field('subsection_description', $post_ID) ) echo '<div class="menu-subsection__description">' . wpautop(esc_html(get_sub_field('subsection_description', $post_ID))) . '</div>';
