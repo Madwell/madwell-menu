@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Madwell Menu
  * Description: This plugin allows for easy editing of restaurant menus and shortcode integration with the frontend. 
- * Version: 1.3
+ * Version: 1.4
  * Author: Madwell
  * Author URI: http://madwell.com
  */
